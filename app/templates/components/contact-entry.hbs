@@ -1,0 +1,8 @@
+<!--Template for populating the table with contacts-->
+<tr>
+  <td>{{contact.firstName}} {{contact.surname}}</td>
+  <td>{{contact.phone}}</td>
+  <td>{{contact.mobile}}</td>
+  <td><button {{action "deleteContact" contact.firstName contact.surname contact.phone contact.mobile}}>Delete Contact</button></td>
+</tr>
+

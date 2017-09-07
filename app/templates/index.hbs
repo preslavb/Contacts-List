@@ -1,0 +1,34 @@
+<!--Define the form and populate with handlebars input tags (required for passing the values to the javascript method "submitFormData()")-->
+<form>
+  First Name:<br>
+  {{input type="text" value=firstName}}<br>
+
+  Surname:<br>
+  {{input type="text" value=surname}}<br>
+
+  Phone Number:<br>
+  {{input type="text" value=phoneNum}}<br>
+
+  Mobile Number:<br>
+  {{input type="text" value=mobileNum}}<br>
+
+  <!--On click, calls the "submitFormData()" method with the input values as parameters-->
+  <input type="submit" value="Add Contact" {{action "submitFormData" firstName surname phoneNum mobileNum}}>
+</form>
+
+<table bgcolor="#BBBBBB" style="width:50%">
+  <tr class="TableHeaders">
+    <th colspan='4'>Contacts</th>
+  </tr>
+  <tr class="TableHeaders">
+    <th>Full Name</th>
+    <th>Phone Number</th>
+    <th>Mobile Number</th>
+    <th>Action</th>
+  </tr>
+
+  <!--For each contact in the model (which gets automatically populated with all currently saved contacts) creates an instance of the "contact-entry" component-->
+  {{#each model as |contact|}}
+    {{contact-entry contact=contact deleteContact='deleteContact'}}
+  {{/each}}
+</table>
