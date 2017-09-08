@@ -36,6 +36,11 @@ td
 	border-right: 1px solid #888888;
 }
 
+td:nth-child(1), th:nth-child(1)
+{
+	width: 5%;
+}
+
 button
 {
 	width: 100%;
