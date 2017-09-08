@@ -28,9 +28,9 @@
     <th>Action</th>
   </tr>
 
-  <!--For each contact in the model (which gets automatically populated with all currently saved contacts) creates an instance of the "contact-entry" component.
+  <!--For each contact in the model (which gets automatically populated with all currently saved contacts) creates an instance of the "contact-entry" component with an index corresponding to its position in the store collection, for use later when deleting a contact.
   Subscribe the component deleteContact implementation to the index implementation-->
-  {{#each model as |contact|}}
-    {{contact-entry contact=contact deleteContact='deleteContact'}}
+  {{#each model as |contact index|}}
+    {{contact-entry contactID=index contact=contact deleteContact='deleteContact'}}
   {{/each}}
 </table>

@@ -6,8 +6,8 @@ export default Ember.Component.extend({
   
   actions:  {
   	//Requires a reference to the index implementation of the method. Acts as a "proxy" as it currently is.
-    deleteContact(firstName, surname, phoneNum, mobileNum)  {
-      this.sendAction('deleteContact', firstName, surname, phoneNum, mobileNum);
+    deleteContact(contactID)  {
+      this.sendAction('deleteContact', contactID);
     }
   }
 });
